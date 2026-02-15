@@ -1,0 +1,40 @@
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 90%; /* full width parent */
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 2em;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.search-button {
+  padding: 8px; /* mai mare decât 6px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #f0e6fa;
+}
+
+.search-icon {
+  color: #9c27b0; /* accent mov */
+  font-size: 2rem !important; /* forțăm font-size */
+  width: 2rem !important;
+  height: 2rem !important;
+}

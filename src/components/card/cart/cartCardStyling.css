@@ -1,0 +1,132 @@
+/* Upper section */
+.cart-card-upper {
+  display: flex;
+  align-items: center;
+  
+  position: relative;
+}
+
+/* Banner mai mare */
+.cart-card-banner {
+  width: 10em; /* puțin mai lat */
+  height: 7.5em; /* la fel de înalt ca upper section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #79d9b2;
+}
+
+/* Restul rămâne la fel */
+.cart-book-icon {
+  font-size: 42px !important;
+  color: #054d40;
+}
+
+.cart-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #054d40;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.cart-author {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.cart-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #054d40;
+}
+
+/* Favorite button in upper corner */
+.favorite-button {
+  color: #054d40;
+  position: absolute;
+  transition: color 0.2s;
+}
+
+.favorite-button:hover {
+  color: #79d9b2;
+}
+
+/* Lower section */
+.cart-card-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px; /* mai puțin padding */
+  border-top: 1px solid #e0e0e0;
+}
+
+.delete-button {
+  color: #e63946;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
+}
+
+/* Quantity selector */
+.quantity-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f3f9f6;
+  padding: 6px 12px;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quantity-text {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.quantity-button {
+  border: none;
+  background-color: #79d9b2;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.quantity-button:hover {
+  background-color: #054d40;
+}
+
+
+
+
+
+/* ------------ CART GRID -------------- */
+.cart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+}
+
+.empty-cart-message {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-top: 50px;
+}

@@ -1,0 +1,25 @@
+.input-field{
+    padding: 0.5em;
+    width: 90%
+}
+
+.password-dropdown {
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.password-paragraph-message {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.password-paragraph-message.ok {
+  color: green;
+}
+
+.password-paragraph-message.error {
+  color: red;
+}

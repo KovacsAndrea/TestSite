@@ -1,0 +1,36 @@
+.full-view-height-full-view-width-page{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(241, 241, 241);
+}
+
+.flex-page-layout {
+  display: flex;
+  width: 100%;
+}
+
+.twenty-panel {
+  width: 20%;
+  background-color: #ffffff;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+
+
+.eighty-panel {
+  width: 80%;
+  background-color: #ffffff;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sixty-panel {
+  width: 60%;
+  background-color: #ffffff;
+  padding: 16px;
+  box-sizing: border-box;
+}

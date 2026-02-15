@@ -1,0 +1,178 @@
+.book-card {
+  width: 100%;
+  min-width: 150px;
+  max-width: 300px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ICON SECTION */
+.book-card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 110px;
+  background-color: #79d9b2;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.book-icon {
+  font-size: 56px !important;
+  color: #054d40;
+}
+
+/* CONTENT */
+.book-card-content {
+  flex-grow: 1;
+  padding: 12px;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #054d40;
+  margin-bottom: 4px;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.book-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #054d40;
+}
+
+/* ACTIONS */
+.book-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px 12px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.favorite-button {
+  color: #054d40;
+  padding: 10px;
+}
+
+.favorite-filled {
+  color: #054d40;
+}
+
+.favorite-button:hover {
+  color: #79d9b2;
+}
+
+.add-to-cart-button {
+  background-color: #79d9b2 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: 16px !important;
+  padding: 4px 12px !important;
+  font-size: 0.85rem !important;
+}
+
+.add-to-cart-button:hover {
+  background-color: #6acfb0 !important;
+}
+
+
+/* OUT OF STOCK CARD */
+
+.out-of-stock-card {
+  background-color: #f2f2f2;
+  opacity: 0.85;
+  position: relative;
+}
+
+.out-of-stock-icon {
+  background-color: #d9d9d9 !important;
+}
+
+.out-of-stock-card .book-title,
+.out-of-stock-card .book-author,
+.out-of-stock-card .book-price {
+  color: #9e9e9e;
+}
+
+/* OUT OF STOCK LABEL */
+
+.out-of-stock-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background-color: #9c27b0;
+  color: #ffffff;
+
+  padding: 4px 10px;
+  border-radius: 12px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  z-index: 2;
+}
+
+/* icon negru când e out of stock */
+.out-of-stock-book-icon {
+  color: #000000 !important;
+}
+
+/* buton gri închis când e out of stock */
+.out-of-stock-button {
+  background-color: #9e9e9e !important;
+  color: #ffffff !important;
+}
+
+.out-of-stock-button:hover {
+  background-color: #9e9e9e !important;
+}
+
+/* eliminăm efectul de hover implicit când e disabled */
+.add-to-cart-button:disabled {
+  background-color: #9e9e9e !important;
+  color: #ffffff !important;
+  cursor: not-allowed !important;
+}
+
+
+/*GRID*/
+.card-grid {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+
+  padding: 24px;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  overflow-y: auto;
+}

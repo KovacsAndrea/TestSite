@@ -1,0 +1,91 @@
+/* ===== EMPTY FAVORITES MESSAGE ===== */
+
+.empty-faves-container {
+  height: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-faves-icon {
+  font-size: 80px !important;
+  color: #9c27b0; /* changed from green to mov */
+  opacity: 0.9;
+}
+
+.empty-faves-title {
+  color: #054d40;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.empty-faves-text {
+  color: #5f7f75;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.empty-faves-button {
+  background-color: #9c27b0 !important; /* changed from verde */
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 22px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.empty-faves-button:hover {
+  background-color: #7b1fa2 !important;
+  transform: translateY(-2px);
+}
+
+/* ===== EMPTY CART MESSAGE ===== */
+.empty-cart-container {
+  height: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-cart-icon {
+  font-size: 80px !important;
+  color: #9c27b0; /* accent mov ca să fie diferit de fave */
+  opacity: 0.9;
+}
+
+.empty-cart-title {
+  color: #054d40;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.empty-cart-text {
+  color: #5f7f75;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.empty-cart-button {
+  background-color: #9c27b0 !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 22px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.empty-cart-button:hover {
+  background-color: #7b1fa2 !important;
+  transform: translateY(-2px);
+}
+

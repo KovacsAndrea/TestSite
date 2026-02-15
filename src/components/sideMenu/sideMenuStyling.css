@@ -1,0 +1,148 @@
+/* ===== SIDEBAR CONTAINER ===== */
+
+.favorites-sidebar {
+  width: 100%;
+  height: 100%;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  background-color: #f8fffc;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ===== ACCOUNT BANNER ===== */
+
+.account-banner {
+  padding: 20px 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #79d9b2, #5ecfa5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.account-avatar {
+  width: 55px !important;
+  height: 55px !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  background-color: #ffffff !important;
+  color: #0e7a5a !important;
+}
+
+.account-username {
+  font-weight: 600 !important;
+  color: #054d40 !important;
+  font-size: 18px !important;
+}
+
+/* ===== QUICK ACTIONS ===== */
+
+.quick-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.quick-item:hover {
+  transform: translateY(-4px);
+}
+
+.quick-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #e6faf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.quick-circle svg {
+  color: #1fa67a;
+  font-size: 24px;
+}
+
+.quick-item:hover .quick-circle {
+  background-color: #79d9b2;
+}
+
+.quick-item:hover .quick-circle svg {
+  color: white;
+}
+
+.quick-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #054d40;
+  text-align: center;
+}
+
+/* ===== DIVIDER ===== */
+
+.sidebar-divider {
+  background-color: #d8eee7 !important;
+  margin: 10px 0 !important;
+}
+
+/* ===== DETAILED MENU ===== */
+
+.detailed-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e3f4ef;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #eafcf6;
+  padding-left: 14px;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  color: #1fa67a;
+}
+
+.menu-arrow {
+  color: #79d9b2;
+  font-size: 20px !important;
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover .menu-arrow {
+  transform: translateX(4px);
+}
