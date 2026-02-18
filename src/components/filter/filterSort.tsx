@@ -64,6 +64,7 @@ export const FilterSort: React.FC = () => {
       </Box>
       <Slider
         value={[filters.minPrice, filters.maxPrice]}
+        id = "filter-price-slide-bar"
         onChange={handlePriceChange}
         valueLabelDisplay="on" // <-- arată valorile curente în thumb
         min={lowestPrice}
@@ -89,6 +90,7 @@ export const FilterSort: React.FC = () => {
     <FormControlLabel
     control={
       <CustomCheckbox
+        id = "filter-only-stock-checkbox"
         checked={stockOnly}
         onChange={(e) => setStockOnly(e.target.checked)}
       />

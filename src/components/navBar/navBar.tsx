@@ -43,13 +43,14 @@ export const NavbarComponent: React.FC = () => {
   return (
     <AppBar
       position="static"
+      id ="nav-bar"
       sx={{
         backgroundColor: "#a8e6cf",
         boxShadow: "none",
         paddingX: 2,
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar id = "nav-bar-tool-bar" sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Left: Logo + App Name */}
         <div
           style={{
@@ -61,12 +62,14 @@ export const NavbarComponent: React.FC = () => {
           onClick={() => navigate("/home")}
         >
           <Box
+            id = "nav-bar-site-logo"
             component="img"
             src="/TiconBlack.png"
             alt="Logo"
             sx={{ width: 32, height: 32 }}
           />
           <Typography
+          id = "nav-bar-site-title"
             variant="h5"
             sx={{ fontWeight: 600, color: "#ffffff", m: 0, p: 0 }}
           >
@@ -75,15 +78,15 @@ export const NavbarComponent: React.FC = () => {
         </div>
 
         {/* Right: Icons */}
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+        <div id = "nav-bar-tool-box" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
 
           {/* Home */}
-          <IconButton onClick={() => navigate("/home")}>
+          <IconButton id = "nav-bar-home-icon" onClick={() => navigate("/home")}>
             <HomeIcon sx={{ color: "#054d40" }} />
           </IconButton>
 
           {/* Favorite */}
-          <IconButton onClick={() => navigate("/favorites")}>
+          <IconButton id = "nav-bar-favorite-icon" onClick={() => navigate("/favorites")}>
           {favoriteCount > 0 ? (
             <Badge badgeContent={favoriteCount} color="secondary">
               <FavoriteIcon sx={{ color: "#054d40" }} />
@@ -94,7 +97,7 @@ export const NavbarComponent: React.FC = () => {
         </IconButton>
 
           {/* Cart */}
-          <IconButton onClick={() => navigate("/cart")}>
+          <IconButton id = "nav-bar-cart-icon" onClick={() => navigate("/cart")}>
             <Badge badgeContent={cartCount} color="secondary">
               <ShoppingCartIcon sx={{ color: "#054d40" }} />
             </Badge>
@@ -103,7 +106,7 @@ export const NavbarComponent: React.FC = () => {
           {/* User Avatar */}
           {user ? (
             <>
-              <IconButton onClick={handleAvatarClick}>
+              <IconButton id = "nav-bar-user-avatar-logged-in" onClick={handleAvatarClick}>
                 <Avatar sx={{ bgcolor: "#9c27b0", width: 32, height: 32 }}>
                   {user.username.charAt(0).toUpperCase()}
                 </Avatar>
@@ -138,7 +141,7 @@ export const NavbarComponent: React.FC = () => {
               </Menu>
             </>
           ) : (
-            <IconButton onClick={() => navigate("/login")}>
+            <IconButton id = "nav-bar-user-avatar-logged-out"  onClick={() => navigate("/login")}>
               <Avatar sx={{ bgcolor: "#79d9b2", width: 32, height: 32 }}>
                 U
               </Avatar>
