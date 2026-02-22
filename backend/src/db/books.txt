@@ -13,7 +13,7 @@
 {"id":"13","title":"The Wise Man's Fear","author":"Patrick Rothfuss","price":19.75,"year":2011,"stock":16}
 {"id":"14","title":"The Slow Regard of Silent Things","author":"Patrick Rothfuss","price":15.5,"year":2014,"stock":0}
 {"id":"15","title":"Words of Radiance","author":"Brandon Sanderson","price":25,"year":2014,"stock":19}
-{"id":"16","title":"Edgedancer","author":"Brandon Sanderson","price":12.99,"year":2016,"stock":11}
+{"id":"16","title":"Edgedancer","author":"Brandon Sanderson","price":12.5,"year":2016,"stock":11}
 {"id":"17","title":"Oathbringer","author":"Brandon Sanderson","price":26,"year":2017,"stock":13}
 {"id":"18","title":"Dawnshard","author":"Brandon Sanderson","price":14.5,"year":2020,"stock":6}
 {"id":"19","title":"The Priory of the Orange Tree","author":"Samantha Shannon","price":22.99,"year":2019,"stock":10}

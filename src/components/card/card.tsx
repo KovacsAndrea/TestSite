@@ -35,7 +35,7 @@ export const BookCard: React.FC<{ book: Book }> = ({ book }) => {
   }
 
   return (
-  <Card className={`book-card ${isOutOfStock ? "out-of-stock-card" : ""}`}>
+  <Card id = {book.id} className={`book-card ${isOutOfStock ? "out-of-stock-card" : ""}`}>
     {isOutOfStock && (
       <Box className="out-of-stock-label">
         Out of stock
@@ -46,16 +46,16 @@ export const BookCard: React.FC<{ book: Book }> = ({ book }) => {
       <MenuBookIcon className={`book-icon ${isOutOfStock ? "out-of-stock-book-icon" : ""}`} />
     </Box>
 
-    <CardContent className="book-card-content">
-      <Typography className="book-title">
+    <CardContent id="card-content" className="book-card-content">
+      <Typography id ={book.id + "_title"} className="book-title">
         {book.title}
       </Typography>
 
-      <Typography className="book-author">
+      <Typography id ={book.id + "_author"} className="book-author">
         {book.author} • {book.year}
       </Typography>
 
-      <Typography className="book-price">
+      <Typography id ={book.id + "_price"} className="book-price">
         {book.price} €
       </Typography>
     </CardContent>

@@ -11,7 +11,8 @@ interface CardGridProps {
 
 export const CardGrid: React.FC<CardGridProps> = ({ books }) => {
   return (
-    <Box className="card-grid">
+    <Box className="card-grid" id = "card-grid">
+
       {books.map((book) => (
         <BookCard
           book = {book}

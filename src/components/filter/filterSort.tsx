@@ -42,10 +42,10 @@ export const FilterSort: React.FC = () => {
 
 
   return (
-    <Box className="filter-sort-container">
+    <Box id = "home-page-side-menu" className="filter-sort-container">
       {/* -------- FILTER -------- */}
        <Box className="filter-section">
-    <Typography className="section-title">Filter by</Typography>
+    <Typography id ="filter-section-label" className="section-title">Filter by</Typography>
     
     {/* --- Price Labels --- */}
       <Box
@@ -56,17 +56,16 @@ export const FilterSort: React.FC = () => {
           color: "#666",
           marginBottom: "4px",
         }}
-      ><Typography className="radio-label" sx={{ marginBottom: "4px" }}>
+      ><Typography id ="filter-price-section-label" className="radio-label" sx={{ marginBottom: "4px" }}>
         Price
       </Typography>
-      <div>
-      </div>
       </Box>
       <Slider
         value={[filters.minPrice, filters.maxPrice]}
         id = "filter-price-slide-bar"
         onChange={handlePriceChange}
-        valueLabelDisplay="on" // <-- arată valorile curente în thumb
+        valueLabelDisplay="on" 
+        step={1}
         min={lowestPrice}
         max={highestPrice}
         sx={{
@@ -88,6 +87,7 @@ export const FilterSort: React.FC = () => {
 
 
     <FormControlLabel
+    id = "filter-stock-section"
     control={
       <CustomCheckbox
         id = "filter-only-stock-checkbox"
@@ -100,11 +100,11 @@ export const FilterSort: React.FC = () => {
                  
 
       {/* -------- SORT CATEGORY -------- */}
-      <Box className="sort-section">
-        <Typography className="section-title">Sort By</Typography>
+      <Box className="sort-section" id ="sort-section">
+        <Typography className="section-title" id = "sort-section-label">Sort By</Typography>
 
-        <Typography className="radio-label">Criteria</Typography>
-        <RadioGroup
+        <Typography className="radio-label" id = "sort-criteria-label">Criteria</Typography>
+        <RadioGroup id="sort-criteria-section"
           value={sorting.category}
           onChange={handleCategoryChange}
           className="radio-group"
@@ -121,8 +121,9 @@ export const FilterSort: React.FC = () => {
           <FormControlLabel value="price" control={<CustomRadio />} label="Price" />
         </RadioGroup>
 
-        <Typography className="radio-label">Order</Typography>
+        <Typography className="radio-label" id = "sort-order-label">Order</Typography>
         <RadioGroup
+          id = "sort-order-section"
           value={sorting.order}
           onChange={handleOrderChange}
           className="radio-group"
