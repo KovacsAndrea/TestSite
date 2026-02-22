@@ -6,7 +6,7 @@ import { PasswordField } from "../fields/passwordField"
 import { NewPasswordField } from "../fields/newPasswordField"
 import { ConfirmPasswordField } from "../fields/confirmPasswordField"
 import { useGlobalState } from "../../global/globalState"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export const LoginRegisterComponent: React.FC<{
     isLoggingin: SetStateAction<boolean>
@@ -96,12 +96,14 @@ export const LoginRegisterComponent: React.FC<{
         validateFieldRequired(loginPassword, loginPasswordError, setLoginPasswordError)
 
         if(loginAttemptIsValid()){
-            const response = await loginUser(loginEmailAddress, loginPassword)
+            if(loginEmailAddress.length > 0 && loginPassword.length > 0){
+                    const response = await loginUser(loginEmailAddress, loginPassword)
             if(response.ok){
                 navigate('/home')
             }
             else{
                 setFailedLoginResponse(response.message)
+            }
             }
         }
          
@@ -138,20 +140,23 @@ export const LoginRegisterComponent: React.FC<{
 
     return (
         <>
-            <div className="login-register-component center-center-flex">
+            <>
                 {isLoggingin ? (
-                    <>
-                    <h1 className="login-component-title">Log In</h1>
+                    <div id = "login-component-container" className="login-register-component center-center-flex">
+                    <h1 id="login-title" className="login-component-title">Log In</h1>
                     <InputField 
+                    id="login-email-input-field"
                     key="log-in-email" 
                     label="Email" 
                     value={loginEmailAddress} 
                     setValue={setLoginEmailAddress} 
                     error={loginEmailAddressError}
                     setError={setLoginEmailAddressError}
-                    validate={Validators.email}/>
+                    validate={Validators.email}
+                    />
                     
                     <PasswordField 
+                    id="login-password-input-field"
                     key = "login-password"
                     label = "Password"
                     value = {loginPassword}
@@ -159,15 +164,18 @@ export const LoginRegisterComponent: React.FC<{
                     error = {loginPasswordError}
                     setError= {setLoginPasswordError}
                     />
-                    <p className="small-text color-red">{failedLoginResponse}</p>
-                    <button onClick={tryLogin}>Log in</button>
-                    <div className="center-center-flex flex-row"  style={{ gap: "4px" }}> <p className="small-text">Don't have an account?</p> <a onClick={userIsRegistering}>Register Now</a> </div>
-                    
-                    </>
-                    ) : (
-                    <>
-                    <h1 className="login-component-title">Register</h1>
+                    <p id = "login-error-message" className="small-text color-red">{failedLoginResponse}</p>
+                    <button id="login-button" onClick={tryLogin}>Log in</button>
+                    <div className="center-center-flex flex-row"  style={{ gap: "4px" }}> <p className="small-text">Don't have an account?</p> <a id = "register-link" onClick={userIsRegistering}>Register Now</a> </div>
+                    <Link id="login-guest-link" to="/home">Visit as guest</Link>  
+                    </div>
+                    ) 
+                    : 
+                    (
+                    <div id = "register-component-container" className="login-register-component center-center-flex">
+                    <h1 id = "register-title" className="login-component-title">Register</h1>
                     <InputField 
+                    id="register-email-input-field"
                     key="register-email" 
                     label="Email" 
                     value={registerEmailAddress} 
@@ -177,6 +185,7 @@ export const LoginRegisterComponent: React.FC<{
                     setError={setRegisterEmailAddressError}
                     />
                     <InputField 
+                    id="register-usename-input-field"
                     key="register-username" 
                     label="Username" 
                     value={registerUsername} 
@@ -185,6 +194,7 @@ export const LoginRegisterComponent: React.FC<{
                     setError = {setRegisterUsernameError}
                     />
                     <NewPasswordField 
+                    id="register-password-input-field"
                     key="register-password"
                     label = "Password"
                     value = {registerPassword}
@@ -196,6 +206,7 @@ export const LoginRegisterComponent: React.FC<{
                     />
                     
                     <ConfirmPasswordField 
+                    id="register-confirm-password-input-field"
                     key="register-confirm-password"
                     label= "Confirm Passowrd" 
                     value={registerRepeatPassword} 
@@ -205,15 +216,15 @@ export const LoginRegisterComponent: React.FC<{
                     password= {registerPassword}
                     otherPasswordIsInvalid = {rPIsInvalid} 
                     />
-                    <p className="small-text color-red">{failedRegisterResponse}</p>
-                    <button onClick={tryRegister}>Register</button>
-                    <div className="center-center-flex flex-row"  style={{ gap: "4px" }}> <p className="small-text">Already have an account?</p> <a onClick={userIsRegistering}>Log in</a> </div>
-                    
-                    </>
+                    <p id = "register-error-message" className="small-text color-red">{failedRegisterResponse}</p>
+                    <button id = "register-button" onClick={tryRegister}>Register</button>
+                    <div className="center-center-flex flex-row"  style={{ gap: "4px" }}> <p className="small-text">Already have an account?</p> <a id = "login-link" onClick={userIsRegistering}>Log in</a> </div>
+                    <Link id="register-guest-link" to="/home">Visit as guest</Link> 
+                    </div>
                     )}
-                
-                
-            </div>
+                                 
+                 
+            </>
  
         </>
     )

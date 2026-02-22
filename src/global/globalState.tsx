@@ -17,6 +17,7 @@ import type {
   Sorting,
   CartItem,
 } from "../models/interfaces";
+import { useNavigate } from "react-router-dom";
 
 interface GlobalState {
   user: User | null;
@@ -230,7 +231,7 @@ const fetchBooks = async (searchQuery?: string) => {
     const storedUser = localStorage.getItem("user");
     console.log("USE EFFECT ON MOUNT")
     if (storedUser) {
-       const parsedUser: User = JSON.parse(storedUser);
+      const parsedUser: User = JSON.parse(storedUser);
       setUser(parsedUser);
       fetchFaveBooks(parsedUser.uid);
       fetchCartBooks(parsedUser.uid)

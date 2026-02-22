@@ -12,10 +12,12 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import "./cardStyling.css";
 import type { Book } from "../../models/interfaces";
 import { useGlobalState } from "../../global/globalState";
+import { useNavigate } from "react-router-dom";
 
 export const BookCard: React.FC<{ book: Book }> = ({ book }) => {
-  const { faveBooks, addBookToFaves, removeBookFromFaves, addBookToCart, stockOnly } = useGlobalState();
+  const { faveBooks, addBookToFaves, removeBookFromFaves, addBookToCart, stockOnly, user } = useGlobalState();
   const isOutOfStock = book.stock === 0;
+  const navigate = useNavigate();
 
   const isFavorite = faveBooks.some((b) => b.id === book.id);
   const handleFavoriteClick = async () => {
@@ -27,8 +29,18 @@ export const BookCard: React.FC<{ book: Book }> = ({ book }) => {
   };
 
   const handleAddToCart = async () => {
+    if(user){
     await addBookToCart(book.id);
-    alert(book.stock)
+    }
+    else {
+      const shouldLogin = window.confirm(
+        "Prima data trebuie sa te loghezi ca sa adaugi carti în cos.\nVrei sa te loghezi?"
+      );
+
+      if (shouldLogin) {
+        navigate("/auth");
+      }
+    }
   }
   if (stockOnly && book.stock === 0) {
     return null;

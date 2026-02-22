@@ -15,7 +15,7 @@ function App() {
     <GlobalStateProvider>
       <BrowserRouter> 
         <Routes>
-          <Route path = "login" element = {<LoginRegisterPage />}/>
+          <Route path = "auth" element = {<LoginRegisterPage />}/>
           <Route path = "home" element = {<HomePage />}/>
           <Route path = "profile" element = {<ProfilePage />}/>
           <Route path = "cart" element = {<CartPage/>}/>

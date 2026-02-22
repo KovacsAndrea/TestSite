@@ -6,6 +6,7 @@ import "./fieldsStyling.css";
 type PasswordFieldProps = {
   label: string;
   value: string;
+  id:string,
   setValue: Dispatch<SetStateAction<string>>;
   error: string;
   setError: Dispatch<SetStateAction<string>>;
@@ -15,6 +16,7 @@ type PasswordFieldProps = {
 export const PasswordField: React.FC<PasswordFieldProps> = ({
   label,
   value,
+  id,
   setValue,
   error,
   setError,
@@ -39,6 +41,7 @@ export const PasswordField: React.FC<PasswordFieldProps> = ({
   return (
     <div className="input-field">
       <TextField
+        id={id}
         size = "small"
         label={label}
         variant="outlined"

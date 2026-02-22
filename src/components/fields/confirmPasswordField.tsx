@@ -6,6 +6,7 @@ import "./fieldsStyling.css";
 type ConfirmPasswordFieldProps = {
   label: string;
   value: string;
+  id: string,
   setValue: Dispatch<SetStateAction<string>>;
   error: string;
   setError: Dispatch<SetStateAction<string>>;
@@ -17,6 +18,7 @@ type ConfirmPasswordFieldProps = {
 export const ConfirmPasswordField: React.FC<ConfirmPasswordFieldProps> = ({
   label,
   value,
+  id,
   setValue,
   error,
   setError,
@@ -47,6 +49,7 @@ export const ConfirmPasswordField: React.FC<ConfirmPasswordFieldProps> = ({
     return (
         <div className="input-field">
         <TextField
+            id = {id}
             size = "small"
             label={label}
             variant="outlined"

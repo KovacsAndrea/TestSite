@@ -5,6 +5,7 @@ import "./fieldsStyling.css";
 type InputFieldProps = {
     label: string;
     value: SetStateAction<string>;
+    id: string,
     setValue: Dispatch<SetStateAction<string>>;
     validate?: (value: string) => string | null;
     error: string
@@ -15,6 +16,7 @@ type InputFieldProps = {
 export const InputField: React.FC<InputFieldProps> = ({
     label,
     value,
+    id,
     error,
     setError,
     setValue,

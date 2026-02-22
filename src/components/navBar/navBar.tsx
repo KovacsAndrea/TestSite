@@ -36,7 +36,7 @@ export const NavbarComponent: React.FC = () => {
 
   const handleLogout = () => {
     handleClose();
-    navigate("/login");
+    navigate("/auth");
     logoutUser();
   };
 
@@ -88,7 +88,7 @@ export const NavbarComponent: React.FC = () => {
           {/* Favorite */}
           <IconButton id = "nav-bar-favorite-icon" onClick={() => navigate("/favorites")}>
           {favoriteCount > 0 ? (
-            <Badge badgeContent={favoriteCount} color="secondary">
+            <Badge id="nav-bar-favorite-count-badge" badgeContent={favoriteCount} color="secondary">
               <FavoriteIcon sx={{ color: "#054d40" }} />
             </Badge>
           ) : (
@@ -98,7 +98,7 @@ export const NavbarComponent: React.FC = () => {
 
           {/* Cart */}
           <IconButton id = "nav-bar-cart-icon" onClick={() => navigate("/cart")}>
-            <Badge badgeContent={cartCount} color="secondary">
+            <Badge id ="nav-bar-cart-count-badge" badgeContent={cartCount} color="secondary">
               <ShoppingCartIcon sx={{ color: "#054d40" }} />
             </Badge>
           </IconButton>
@@ -141,7 +141,7 @@ export const NavbarComponent: React.FC = () => {
               </Menu>
             </>
           ) : (
-            <IconButton id = "nav-bar-user-avatar-logged-out"  onClick={() => navigate("/login")}>
+            <IconButton id = "nav-bar-user-avatar-logged-out"  onClick={() => navigate("/auth")}>
               <Avatar sx={{ bgcolor: "#79d9b2", width: 32, height: 32 }}>
                 U
               </Avatar>
