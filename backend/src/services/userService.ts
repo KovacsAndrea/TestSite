@@ -37,11 +37,11 @@ export function usernameExists(username: string): boolean {
 /** Save user ONLY IF email not used and username not used*/
 export function saveUser(email: string, username: string, password: string): ServerResponse | LoginResponse{
   if (emailExists(email)) {
-    return { ok: false, message: "An account with that email already exists. Forgot your password?" };
+    return { ok: false, message: "Un cont cu acest email există deja. Ți-ai uitat parola?" };
   }
 
   if(usernameExists(username)) {
-    return {ok: false, message: "That username is already taken. Try another one!"}
+    return {ok: false, message: "Acest nume de utilizator este deja folosit. Încearcă altul!"}
   }
   const id = crypto.randomUUID();
   const hashed = hashPassword(password);
