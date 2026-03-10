@@ -1,5 +1,3 @@
-/* ===== EMPTY FAVORITES MESSAGE ===== */
-
 .empty-faves-container {
   height: 100%;
   min-height: 60vh;
@@ -14,7 +12,7 @@
 
 .empty-faves-icon {
   font-size: 80px !important;
-  color: #9c27b0; /* changed from green to mov */
+  color: #9c27b0; 
   opacity: 0.9;
 }
 
@@ -31,7 +29,7 @@
 }
 
 .empty-faves-button {
-  background-color: #9c27b0 !important; /* changed from verde */
+  background-color: #9c27b0 !important; 
   text-transform: none !important;
   font-weight: 600 !important;
   padding: 8px 22px !important;
@@ -44,7 +42,6 @@
   transform: translateY(-2px);
 }
 
-/* ===== EMPTY CART MESSAGE ===== */
 .empty-cart-container {
   height: 100%;
   min-height: 60vh;
@@ -59,7 +56,7 @@
 
 .empty-cart-icon {
   font-size: 80px !important;
-  color: #9c27b0; /* accent mov ca să fie diferit de fave */
+  color: #9c27b0; 
   opacity: 0.9;
 }
 

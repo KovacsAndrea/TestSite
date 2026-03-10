@@ -63,7 +63,7 @@ export function saveUser(email: string, username: string, password: string): Ser
   if(userCountAfterRegister == userCount + 1){
     return { ok: true, message: "Cont creat cu succes.", user: newUser };
   }
-  return {ok: false, message: "Ceva nu a mers bine. Te rog incearca din nou!!"}
+  return {ok: false, message: "Ceva nu a mers bine. Te rog incearca din nou!"}
 }
 
 export function getUser(email:string): User | null{
@@ -85,5 +85,5 @@ export function loginKnownUser(email: string, password: string): ServerResponse 
         return {ok: false, message: "Parola e gresita. Incearca din nou!"}
 
     }
-    return {ok: true, message:"Ceva nu a mers bine. Te rog incearca din nou!!" }
+    return {ok: true, message:"Ceva nu a mers bine. Te rog incearca din nou!" }
 }

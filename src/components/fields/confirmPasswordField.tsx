@@ -1,6 +1,6 @@
 import React, { useState, type Dispatch, type SetStateAction } from "react";
 import { TextField, IconButton, InputAdornment } from "@mui/material";
-import { Password, Visibility, VisibilityOff } from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./fieldsStyling.css";
 
 type ConfirmPasswordFieldProps = {

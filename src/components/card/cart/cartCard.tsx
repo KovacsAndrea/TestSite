@@ -89,7 +89,7 @@ export const CartCard: React.FC<CartCardProps> = ({ item }) => {
           <IconButton
             className="quantity-button"
             onClick={handleIncrease}
-            disabled={item.quantity >= item.book.stock} // 🔹 disabled când nu mai putem crește
+            disabled={item.quantity >= item.book.stock}
           >
             +
           </IconButton>

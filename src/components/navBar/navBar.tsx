@@ -113,6 +113,7 @@ export const NavbarComponent: React.FC = () => {
               </IconButton>
 
               <Menu
+                id = "avatar-drop-down"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
@@ -127,6 +128,7 @@ export const NavbarComponent: React.FC = () => {
                 }}
               >
                 <MenuItem
+                 id = "avatar-drop-down-profile-section"
                   onClick={() => {
                     handleClose();
                     navigate("/profile");
@@ -137,7 +139,9 @@ export const NavbarComponent: React.FC = () => {
 
                 <Divider />
 
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                <MenuItem 
+                id = "avatar-drop-down-logout-section"
+                onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </>
           ) : (

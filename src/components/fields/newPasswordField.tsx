@@ -83,7 +83,7 @@ export const NewPasswordField: React.FC<PasswordFieldProps> = ({
   const ruleIcon = (status: string) => {
     if (status === "ok") return "✔️";
     if (status === "error") return "❌";
-    return ""; // dacă input-ul e gol, nu afișăm nimic
+    return ""; 
   };
 
   const togglePasswordVisibility = () => {

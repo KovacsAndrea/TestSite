@@ -16,7 +16,7 @@ export const LoginRegisterComponent: React.FC<{
     setIsLoggingIn
 }) => {
     const navigate = useNavigate()
-    const {registerUser, loginUser, user} = useGlobalState();
+    const {registerUser, loginUser} = useGlobalState();
 
     //states for LOGIN
     //LOGIN - EMAIL ADDRESS
@@ -129,11 +129,13 @@ export const LoginRegisterComponent: React.FC<{
         validateFieldRequired(registerRepeatPassword, repeatPasswordErrorMessage, setRepeatPasswordErrorMessage);
         
         if (registrationAttemptIsvalid()) {
-            const response = await registerUser(registerEmailAddress, registerUsername, registerPassword);
-            if(response.ok){
-                navigate("/home")
-            }else{
-                setFailedRegisterResponse(response.message)
+            if(registerEmailAddress.length > 0 && registerUsername.length > 0 && registerPassword.length > 0 && registerRepeatPassword.length > 0){
+                const response = await registerUser(registerEmailAddress, registerUsername, registerPassword);
+                    if(response.ok){
+                        navigate("/home")
+                    }else{
+                        setFailedRegisterResponse(response.message)
+                    }
             }
         }
     }

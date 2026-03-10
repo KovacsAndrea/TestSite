@@ -1,5 +1,3 @@
-/* ===== SIDEBAR CONTAINER ===== */
-
 .favorites-sidebar {
   width: 100%;
   height: 100%;
@@ -10,8 +8,6 @@
   flex-direction: column;
   gap: 25px;
 }
-
-/* ===== ACCOUNT BANNER ===== */
 
 .account-banner {
   padding: 20px 15px;
@@ -40,8 +36,6 @@
   color: #054d40 !important;
   font-size: 18px !important;
 }
-
-/* ===== QUICK ACTIONS ===== */
 
 .quick-actions {
   display: flex;
@@ -94,14 +88,10 @@
   text-align: center;
 }
 
-/* ===== DIVIDER ===== */
-
 .sidebar-divider {
   background-color: #d8eee7 !important;
   margin: 10px 0 !important;
 }
-
-/* ===== DETAILED MENU ===== */
 
 .detailed-menu {
   display: flex;

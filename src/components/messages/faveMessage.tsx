@@ -23,6 +23,7 @@ export const FavesMessages: React.FC = () => {
       <Button
         variant="contained"
         className="empty-faves-button"
+        id = "empty-faves-button"
         onClick={() => navigate("/home")}
       >
         Vezi cărțile

@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import React, { useState, type Dispatch, type SetStateAction } from "react";
+import React, { type Dispatch, type SetStateAction } from "react";
 import "./fieldsStyling.css";
 
 type InputFieldProps = {
@@ -16,7 +16,6 @@ type InputFieldProps = {
 export const InputField: React.FC<InputFieldProps> = ({
     label,
     value,
-    id,
     error,
     setError,
     setValue,

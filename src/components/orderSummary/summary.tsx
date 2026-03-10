@@ -6,7 +6,6 @@ import type { CartItem } from "../../models/interfaces";
 export const CartSummary: React.FC = () => {
   const { cartBooks } = useGlobalState();
 
-  // calculează totalul fiecărui item și totalul general
   const totalPrice = cartBooks.reduce(
     (sum, item) => sum + item.book.price * item.quantity,
     0

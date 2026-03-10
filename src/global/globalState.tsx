@@ -94,7 +94,7 @@ export const GlobalStateProvider = ({
     order: "none",
   });
 
-  // ----------------- CORE PROCESS FUNCTION -----------------
+  //CORE PROCESS FUNCTION
   const applyFiltersAndSorting = (
     booksList: Book[],
     currentFilters: Filters,
@@ -150,7 +150,7 @@ export const GlobalStateProvider = ({
     setProcessedBooks(result);
   };
 
-// ----------------- FETCH BOOKS -----------------
+//FETCH BOOKS
 const fetchBooks = async (searchQuery?: string) => {
   try {
     let url = `${backendUrl}/books`;
@@ -190,7 +190,7 @@ const fetchBooks = async (searchQuery?: string) => {
   }
 };
 
-  // ----------------- FETCH FAVE BOOKS -----------------
+  //FETCH FAVE BOOKS
   const fetchFaveBooks = async (uid?: string) => {
     console.log("FETCHING FAVE BOOKS")
     if (!uid && user) uid = user.uid; // fallback dacă nu e trecut ca param
@@ -208,7 +208,7 @@ const fetchBooks = async (searchQuery?: string) => {
     }
   }; 
 
-  // ----------------- FETCH CART BOOKS -----------------
+  //FETCH CART BOOKS
   const fetchCartBooks = async (uid?: string) => {
     console.log("FETCHING CART BOOKS");
     if (!uid && user) uid = user.uid; // fallback dacă nu e trecut ca param
@@ -240,14 +240,14 @@ const fetchBooks = async (searchQuery?: string) => {
     
   }, []);
 
-  // ----------------- UPDATE FILTER -----------------
+  //UPDATE FILTER
   const updateFilters = (newFilters: Filters) => {
     console.log("UPDATING FILTERS")
     setFilters(newFilters);
     applyFiltersAndSorting(books, newFilters, sorting);
   };
 
-  // ----------------- UPDATE SORT -----------------
+  //UPDATE SORT
   const updateSorting = (newSorting: Sorting) => {
     console.log("UPDATING SORTING")
     setSorting(newSorting);
@@ -257,7 +257,7 @@ const fetchBooks = async (searchQuery?: string) => {
   //update faves
   //add faves
 
-  // ----------------- ADD FAVE BOOK -----------------
+  //ADD FAVE BOOK
   const addBookToFaves = async (bookid: string): Promise<ServerResponse> => {
     console.log("ADDING BOOK TO FAVES")
     if (!user) return { ok: false, message: "Trebuie sa te loghezi prima data!" };
@@ -283,7 +283,7 @@ const fetchBooks = async (searchQuery?: string) => {
     }
   };
 
-  // ----------------- REMOVE FAVE BOOK -----------------
+  //REMOVE FAVE BOOK
   const removeBookFromFaves = async (bookid: string): Promise<ServerResponse> => {
     console.log("REMOVING BOOK FROM FAVES")
     if (!user) return { ok: false, message: "Trebuie sa te loghezi prima data!" };
@@ -298,7 +298,6 @@ const fetchBooks = async (searchQuery?: string) => {
       const data: ServerResponse = await response.json();
 
       if (data.ok) {
-        // refresh favorite books
         await fetchFaveBooks();
       }
 
@@ -311,7 +310,7 @@ const fetchBooks = async (searchQuery?: string) => {
 
   //update cart
 
-  // ----------------- ADD BOOK TO CART -----------------
+  //ADD BOOK TO CART
   const addBookToCart = async (bookid: string): Promise<ServerResponse> => {
     console.log("ADDING BOOK TO CART");
     if (!user) return { ok: false, message: "Trebuie sa te loghezi prima data!" };
@@ -326,7 +325,7 @@ const fetchBooks = async (searchQuery?: string) => {
       const data: ServerResponse = await response.json();
 
       if (data.ok) {
-        await fetchCartBooks(); // refresh cart
+        await fetchCartBooks(); 
       }
 
       return data;
@@ -336,7 +335,7 @@ const fetchBooks = async (searchQuery?: string) => {
     }
   };
 
-  // ----------------- REMOVE ONE UNIT FROM CART -----------------
+  //REMOVE ONE UNIT FROM CART
   const removeBookFromCart = async (bookid: string): Promise<ServerResponse> => {
     console.log("REMOVING ONE UNIT FROM CART");
     if (!user) return { ok: false, message: "Trebuie sa te loghezi prima data!" };
@@ -361,7 +360,7 @@ const fetchBooks = async (searchQuery?: string) => {
     }
   };
 
-  // ----------------- REMOVE ALL UNITS FROM CART -----------------
+  //REMOVE ALL UNITS FROM CART
   const removeAllBooksFromCart = async (bookid: string): Promise<ServerResponse> => {
     console.log("REMOVING ALL UNITS FROM CART");
     if (!user) return { ok: false, message: "Trebuie sa te loghezi prima data!" };
@@ -385,7 +384,7 @@ const fetchBooks = async (searchQuery?: string) => {
       return { ok: false, message: "A apărut o eroare la server." };
     }
   };
-  // ----------------- USER FUNCTIONS -----------------
+  //USER FUNCTIONS
   const registerUser = async (
     email: string,
     username: string,

@@ -28,14 +28,14 @@ export const SearchBar: React.FC = () => {
   const handleSearch = () => {
     if (searchQuery.trim() === "") return;
 
-    setSearchActive(true); // activăm search-ul
+    setSearchActive(true);
     fetchBooks(searchQuery.trim());
   };
 
   const handleClear = () => {
     setSearchQuery("");
-    setSearchActive(false); // dezactivăm search-ul
-    fetchBooks(); // fetch fără valoare -> toate cărțile
+    setSearchActive(false); 
+    fetchBooks(); 
   };
 
   // 📌 handle Enter key

@@ -10,17 +10,14 @@ export const CartPage: React.FC = () => {
     <>
       <NavbarComponent />
       <div className="flex-page-layout">
-        {/* Left Side Menu */}
         <div className="twenty-panel">
           <SideMenu />
         </div>
 
-        {/* Middle Cart Grid */}
         <div className="sixty-panel">
           <CartGrid cartItems={cartBooks}/>
         </div>
 
-        {/* Right empty panel */}
         <div className="twenty-panel">
             <CartSummary />
         </div>
