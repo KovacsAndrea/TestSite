@@ -19,7 +19,7 @@ export const CartGrid: React.FC<CartGridProps> = ({ cartItems }) => {
   }
 
   return (
-    <div className="cart-grid">
+    <div className="cart-grid" id = "cart-grid">
       {cartItems.map((item) => (
         <CartCard key={item.book.id} item={item} />
       ))}

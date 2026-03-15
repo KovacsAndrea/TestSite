@@ -58,7 +58,7 @@ export const CartCard: React.FC<CartCardProps> = ({ item }) => {
 };
 
   return (
-    <Card className="cart-card">
+    <Card className="cart-card" id = "cart-card">
       {/* Upper section */}
       <Box className="cart-card-upper">
         <Box className="cart-card-banner">
@@ -66,33 +66,38 @@ export const CartCard: React.FC<CartCardProps> = ({ item }) => {
         </Box>
 
         <CardContent className="cart-card-content">
-          <Typography className="cart-title">{item.book.title}</Typography>
-          <Typography className="cart-author">{item.book.author} • {item.book.year}</Typography>
-          <Typography className="cart-author">In stock: {item.book.stock}</Typography>
-          <Typography className="cart-price">{item.book.price} €</Typography>
+          <Typography className="cart-title" id = "cart-card-title">{item.book.title}</Typography>
+          <Typography className="cart-author" id = "cart-card-author">{item.book.author} • {item.book.year}</Typography>
+          <Typography className="cart-author" id = "cart-card-stock">In stock: {item.book.stock}</Typography>
+          <Typography className="cart-price" id = "cart-card-price">{item.book.price} €</Typography>
         </CardContent>
 
-        <IconButton className="favorite-button" onClick={handleFavoriteClick}>
+        <IconButton className="favorite-button" id = "cart-card-favorite-button" onClick={handleFavoriteClick}>
           {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </IconButton>
       </Box>
 
       {/* Lower section */}
       <Box className="cart-card-lower">
-        <IconButton className="delete-button" onClick={handleDeleteAll}>
+        <IconButton className="delete-button" id = "cart-card-delete-button" onClick={handleDeleteAll}>
           <DeleteIcon />
         </IconButton>
 
         <Box className="quantity-actions">
-          <IconButton className="quantity-button" onClick={handleDecrease}>-</IconButton>
+          <IconButton 
+            id = "cart-card-qt-decrease-button"
+            className="quantity-button" 
+            onClick={handleDecrease}>
+              -
+              </IconButton>
           <Typography className="quantity-text">{item.quantity}</Typography>
           <IconButton
+            id = "cart-card-qt-increase-button"
             className="quantity-button"
             onClick={handleIncrease}
-            disabled={item.quantity >= item.book.stock}
-          >
+            disabled={item.quantity >= item.book.stock}>
             +
-          </IconButton>
+            </IconButton>
         </Box>
       </Box>
     </Card>
