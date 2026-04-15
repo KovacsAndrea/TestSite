@@ -147,7 +147,7 @@ export const LoginRegisterComponent: React.FC<{
                     <div id = "login-component-container" className="login-register-component center-center-flex">
                     <h1 id="login-title" className="login-component-title">Log In</h1>
                     <InputField 
-                    id="login-email-input-field"
+                    id="login-component-email-container"
                     key="log-in-email" 
                     label="Email" 
                     value={loginEmailAddress} 
@@ -158,13 +158,14 @@ export const LoginRegisterComponent: React.FC<{
                     />
                     
                     <PasswordField 
-                    id="login-password-input-field"
+                    id="login-component-password-container"
                     key = "login-password"
                     label = "Password"
                     value = {loginPassword}
                     setValue = {setLoginPassword}
                     error = {loginPasswordError}
                     setError= {setLoginPasswordError}
+                    //validate = {Validators.password}
                     />
                     <p id = "login-error-message" className="small-text color-red">{failedLoginResponse}</p>
                     <button id="login-button" onClick={tryLogin}>Log in</button>
@@ -177,7 +178,7 @@ export const LoginRegisterComponent: React.FC<{
                     <div id = "register-component-container" className="login-register-component center-center-flex">
                     <h1 id = "register-title" className="login-component-title">Register</h1>
                     <InputField 
-                    id="register-email-input-field"
+                    id="register-component-email-container"
                     key="register-email" 
                     label="Email" 
                     value={registerEmailAddress} 
@@ -187,16 +188,17 @@ export const LoginRegisterComponent: React.FC<{
                     setError={setRegisterEmailAddressError}
                     />
                     <InputField 
-                    id="register-usename-input-field"
+                    id="register-component-usename-container"
                     key="register-username" 
                     label="Username" 
                     value={registerUsername} 
                     setValue={setRegisterUsername} 
+                    validate={Validators.username}
                     error= {registerUsernameError}
                     setError = {setRegisterUsernameError}
                     />
                     <NewPasswordField 
-                    id="register-password-input-field"
+                    id="register-component-password-container"
                     key="register-password"
                     label = "Password"
                     value = {registerPassword}
@@ -208,7 +210,7 @@ export const LoginRegisterComponent: React.FC<{
                     />
                     
                     <ConfirmPasswordField 
-                    id="register-confirm-password-input-field"
+                    id="register-component-confirm-password-container"
                     key="register-confirm-password"
                     label= "Confirm Passowrd" 
                     value={registerRepeatPassword} 

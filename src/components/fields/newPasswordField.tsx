@@ -91,9 +91,9 @@ export const NewPasswordField: React.FC<PasswordFieldProps> = ({
   };
 
   return (
-    <div className="input-field">
+    <div className="input-field" id = {id}>
       <TextField
-      id = {id}
+      
       size = "small"
         label={label}
         variant="outlined"

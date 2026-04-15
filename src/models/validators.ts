@@ -46,4 +46,20 @@ export class Validators {
 
         return "";
     }
+
+    static username(value: string): string {
+        const length = value.trim().length;
+
+        if (length < 3) return "Username prea scurt.";
+        if (length > 50) return "Username prea lung.";
+
+            return "";
+    }
+
+    static password(value: string): string {
+    const length = value.trim().length;
+    if (length > 128) return "Parola prea lunga.";
+
+        return "";
+    }
 }

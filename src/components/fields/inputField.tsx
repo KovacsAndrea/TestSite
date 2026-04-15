@@ -17,6 +17,7 @@ export const InputField: React.FC<InputFieldProps> = ({
     label,
     value,
     error,
+    id,
     setError,
     setValue,
     validate,
@@ -39,7 +40,8 @@ export const InputField: React.FC<InputFieldProps> = ({
     };
 
     return (
-        <div className="input-field">
+        <div className="input-field" id={id}
+        >
             <TextField
                 size = "small"
                 label={label}

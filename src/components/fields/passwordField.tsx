@@ -7,9 +7,10 @@ type PasswordFieldProps = {
   label: string;
   value: string;
   id:string,
-  setValue: Dispatch<SetStateAction<string>>;
+  validate?: (value: string) => string | null;
+  setValue: Dispatch<SetStateAction<any>>;
   error: string;
-  setError: Dispatch<SetStateAction<string>>;
+  setError: Dispatch<SetStateAction<any>>;
   fullWidth?: boolean;
 };
 
@@ -17,6 +18,7 @@ export const PasswordField: React.FC<PasswordFieldProps> = ({
   label,
   value,
   id,
+  validate,
   setValue,
   error,
   setError,
@@ -32,6 +34,11 @@ export const PasswordField: React.FC<PasswordFieldProps> = ({
       setError("")
     }
 
+    if (validate) {
+        const validationResult = validate(newValue);
+        setError(validationResult);
+    }
+
   };
 
   const togglePasswordVisibility = () => {
@@ -39,9 +46,8 @@ export const PasswordField: React.FC<PasswordFieldProps> = ({
   };
 
   return (
-    <div className="input-field">
+    <div className="input-field" id={id}>
       <TextField
-        id={id}
         size = "small"
         label={label}
         variant="outlined"
