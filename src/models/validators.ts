@@ -48,10 +48,10 @@ export class Validators {
     }
 
     static username(value: string): string {
-        const length = value.trim().length;
+        //const length = value.trim().length;
 
-        if (length < 3) return "Username prea scurt.";
-        if (length > 50) return "Username prea lung.";
+        // if (length < 3) return "Username prea scurt.";
+        // if (length > 50) return "Username prea lung.";
 
             return "";
     }
